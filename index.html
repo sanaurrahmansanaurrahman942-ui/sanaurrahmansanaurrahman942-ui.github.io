@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Ur Rahman | Digital Creator Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Raleway:wght@200;300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset aur Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.8;
+            color: #222;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+        
+        /* Special Fonts for Sana Ur Rahman */
+        .sana-special {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 800;
+            font-size: 50px;
+            margin-right: 15px;
+            background: linear-gradient(45deg, #ff0080, #854f0d, #055e55);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .ur-special {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 800;
+            font-size: 50px;
+            margin-right: 15px;
+            color: #b3c0ce;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .rahman-special {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            font-size: 50px;
+            background: linear-gradient(to right, #273792, #26d0ce);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff0080, #ff8c00);
+            border-radius: 2px;
+        }
+        
+        /* Introduction Animation - Full Screen */
+        #intro {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .intro-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.8) 70%);
+            z-index: 1;
+        }
+        
+        .intro-content {
+            z-index: 2;
+            position: relative;
+            max-width: 900px;
+            padding: 20px;
+        }
+        
+        .name-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .name-part {
+            font-size: 6rem;
+            font-weight: 700;
+            opacity: 0;
+            padding: 0 15px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 992px) {
+            .name-part {
+                font-size: 4.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .name-part {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .name-part.sana {
+            transform: translateX(-300px) rotate(-10deg);
+        }
+        
+        .name-part.ur {
+            transform: scale(0) rotate(180deg);
+        }
+        
+        .name-part.rahman {
+            transform: translateX(300px) rotate(10deg);
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            opacity: 0;
+            transform: translateY(40px);
+            margin-top: 30px;
+            color: #e0e0e0;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        /* Profile Picture with Glow Effect */
+        .profile-pic-container {
+            margin-top: 50px;
+            opacity: 0;
+            transform: scale(0.5) rotate(180deg);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255,255,255,0.2);
+            box-shadow: 0 0 40px rgba(255,0,128,0.4), 0 0 80px rgba(255,140,0,0.3);
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(255,0,128,0.6), 0 0 100px rgba(255,140,0,0.5);
+        }
+        
+        /* Navigation Bar - Modern & Fixed */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s ease;
+        }
+        
+        nav.scrolled {
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #222;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            color: #ff0080;
+            margin-right: 10px;
+            font-size: 2.2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 35px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:hover {
+            color: #ff0080;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff0080, #ff8c00);
+            border-radius: 3px;
+            transition: width 0.4s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #333;
+            background: none;
+            border: none;
+        }
+        
+        /* About Section - Modern Design */
+        #about {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .about-bg {
+                width: 100%;
+                height: 50%;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+            }
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.8;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ff0080;
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+            border: 10px solid white;
+        }
+        
+        .about-image img:hover {
+            transform: rotate(-2deg) scale(1.03);
+        }
+        
+        /* Skills Section - Creative Design */
+        #skills {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+        }
+        
+        #skills .section-title {
+            color: white;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: white;
+            text-align: center;
+        }
+        
+        .skill-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .skill-card p {
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        /* Projects Section - Grid Layout */
+        #projects {
+            background: #f9f9f9;
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-img-container {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff0080;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+        
+        .project-info {
+            padding: 30px;
+        }
+        
+        .project-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        .project-info p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .tech-tag {
+            background: #f0f0f0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-link {
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #ff0080, #ff8c00);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 0, 128, 0.3);
+        }
+        
+        /* Gallery Section - Masonry Style */
+        #gallery {
+            background: white;
+        }
+        
+        .gallery-container {
+            column-count: 3;
+            column-gap: 20px;
+        }
+        
+        @media (max-width: 992px) {
+            .gallery-container {
+                column-count: 2;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-container {
+                column-count: 1;
+            }
+        }
+        
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Contact Section - Modern Form */
+        #contact {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            position: relative;
+        }
+        
+        #contact .section-title {
+            color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 60px;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-detail:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+        
+        .contact-detail i {
+            font-size: 1.8rem;
+            color: #ffdd00;
+            margin-right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: white;
+            font-size: 1.1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 221, 0, 0.5);
+        }
+        
+        .submit-btn {
+            padding: 18px 40px;
+            background: linear-gradient(90deg, #ffdd00, #ff8c00);
+            color: #222;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.4);
+        }
+        
+        /* Footer - Social Media Focus */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 80px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo span {
+            margin: 0 5px;
+        }
+        
+        .social-section {
+            text-align: center;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+        
+        .social-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #ffdd00;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .social-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .social-icon:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+        
+        .social-icon.tiktok:hover {
+            background: linear-gradient(45deg, #000000, #25f4ee, #fe2c55);
+            box-shadow: 0 15px 30px rgba(37, 244, 238, 0.3);
+        }
+        
+        .social-icon.facebook:hover {
+            background: linear-gradient(45deg, #1877f2, #0d5fcc);
+            box-shadow: 0 15px 30px rgba(24, 119, 242, 0.3);
+        }
+        
+        .social-icon.whatsapp:hover {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+        
+        .social-icon i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .social-icon span {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .copyright {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff0080, #ff8c00);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(255, 0, 128, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(255, 0, 128, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                transition: transform 0.5s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                display: flex;
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .name-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .social-icon {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(255,0,128,0.5), 0 0 40px rgba(255,140,0,0.3); }
+            to { box-shadow: 0 0 30px rgba(255,0,128,0.8), 0 0 60px rgba(255,140,0,0.5); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Introduction Section -->
+    <section id="intro">
+        <div class="intro-overlay"></div>
+        <div class="intro-content">
+            <div class="name-container">
+                <h1 class="name-part sana sana-special">Sana </h1>
+                <h1 class="name-part ur ur-special">Ur </h1>
+                <h1 class="name-part rahman rahman-special">Rahman</h1>
+            </div>
+            <p class="tagline">Digital Creator • Web Designer • Social Media Influencer</p>
+            <div class="profile-pic-container">
+                <img src="eb816fc5-d4ea-423f-9577-e877b67441f8.jpeg" alt="Sana Ur Rahman" class="profile-pic">
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); color: white; font-size: 1.2rem; text-align: center; z-index: 2;">
+            <i class="fas fa-chevron-down float-animation" style="font-size: 2rem; display: block; margin-bottom: 10px;"></i>
+            <span>Scroll to Explore</span>
+        </div>
+    </section>
+    
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="sana-special">Sana</span>
+                <span style="color: #3f25d3;" class="ur-special">Ur</span>
+                <span class="rahman-special">Rahman</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+                <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-bg"></div>
+        <div class="container">
+            <h2 class="section-title">About <span class="sana-special">Sana</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm <span class="sana-special" style="font-size: 1.5rem;">Sana Ur Rahman</span>, a passionate digital creator, web designer, and social media influencer with a vision to create stunning digital experiences that captivate audiences.</p>
+                    <p>With over 5 years of experience in the digital space, I specialize in creating visually appealing content, designing user-friendly websites, and building engaging social media campaigns. My work combines technical expertise with creative storytelling to deliver results that exceed expectations.</p>
+                    <p>When I'm not creating content or designing websites, you can find me exploring new technologies, mentoring aspiring creators, or traveling to find inspiration for my next project.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-text">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50K+</div>
+                            <div class="stat-text">Social Followers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-text">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="eb816fc5-d4ea-423f-9577-e877b67441f8.jpeg" alt="Sana working">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">My <span class="sana-special">Skills</span></h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Design & Development</h3>
+                    <p>Creating responsive, modern websites using HTML5, CSS3, JavaScript, React, and WordPress. Focus on user experience and mobile-first design.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Content Creation</h3>
+                    <p>Producing engaging video content for TikTok, YouTube, and Instagram with professional editing, storytelling, and optimization for each platform.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Social Media Strategy</h3>
+                    <p>Developing and implementing social media strategies that increase engagement, grow followers, and drive conversions across all platforms.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Creating eye-catching graphics, logos, and visual content using Adobe Creative Suite, Canva, and other design tools.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Running successful digital marketing campaigns with SEO, SEM, email marketing, and analytics to maximize ROI.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Building</h3>
+                    <p>Building and nurturing online communities, engaging with followers, and creating loyal brand advocates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="rahman-special">Projects</span></h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <span class="project-badge">Web Design</span>
+                        <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="E-commerce Website" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>Modern E-commerce Platform</h3>
+                        <p>A fully responsive e-commerce website with product filtering, cart functionality, secure checkout, and admin dashboard.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i> Live Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <span class="project-badge">Social Media</span>
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80" alt="Social Media Campaign" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>TikTok Growth Campaign</h3>
+                        <p>Managed a TikTok campaign that grew from 0 to 50K+ followers in 3 months with viral content strategy and community engagement.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TikTok</span>
+                            <span class="tech-tag">Video Editing</span>
+                            <span class="tech-tag">Content Strategy</span>
+                            <span class="tech-tag">Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-tiktok"></i> TikTok Profile</a>
+                            <a href="#" class="project-link"><i class="fas fa-chart-bar"></i> Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img-container">
+                        <span class="project-badge">Web App</span>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Travel App" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <h3>Travel Planning Application</h3>
+                        <p>An interactive travel app with itinerary planning, accommodation booking, local attractions, and social sharing features.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Google Maps API</span>
+                            <span class="tech-tag">UI/UX Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-mobile-alt"></i> App Store</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">My <span style="color:rgb(8, 36, 114);" class="ur-special">Creative</span> Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Design Work">
+                    <div class="gallery-overlay">
+                        <h3>Web Design Project</h3>
+                        <p>Modern responsive website design</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80" alt="Social Media Content">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Content</h3>
+                        <p>TikTok video production</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Graphic Design">
+                    <div class="gallery-overlay">
+                        <h3>Graphic Design</h3>
+                        <p>Brand identity and logo design</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Photography">
+                    <div class="gallery-overlay">
+                        <h3>Photography</h3>
+                        <p>Creative photography portfolio</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="UI/UX Design">
+                    <div class="gallery-overlay">
+                        <h3>UI/UX Design</h3>
+                        <p>Mobile app interface design</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80" alt="Digital Art">
+                    <div class="gallery-overlay">
+                        <h3>Digital Art</h3>
+                        <p>Creative digital illustrations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="sana-special">Touch</span></h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>I'm always excited to collaborate on new projects, discuss creative ideas, or connect with like-minded individuals. Whether you have a project in mind or just want to say hello, feel free to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>contact@sanaurrahman.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Phone / WhatsApp</h3>
+                                <p>+92 300 1234567</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Karachi, Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="sana-special">Sana</span>
+                    <span class="ur-special">Ur</span>
+                    <span class="rahman-special">Rahman</span>
+                </div>
+                
+                <div class="social-section">
+                    <h3 class="social-title">Connect With Me</h3>
+                    <div class="social-icons">
+                        <a href="https://www.tiktok.com/@sanaurrahman" class="social-icon tiktok" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                        <a href="https://www.facebook.com/sanaurrahman" class="social-icon facebook" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://wa.me/923001234567" class="social-icon whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="https://www.instagram.com/sanaurrahman" class="social-icon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.youtube.com/@sanaurrahman" class="social-icon" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <p class="copyright">© 2026 Sana Ur Rahman. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    <script>
+        // DOM Elements
+        const introSection = document.getElementById('intro');
+        const nameParts = document.querySelectorAll('.name-part');
+        const tagline = document.querySelector('.tagline');
+        const profilePicContainer = document.querySelector('.profile-pic-container');
+        const navbar = document.getElementById('navbar');
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const contactForm = document.getElementById('contactForm');
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        // Special Animation for "Sana Ur Rahman"
+        function animateNameSpecial() {
+            // Reset animations
+            nameParts.forEach(part => {
+                part.style.transition = 'all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            });
+            tagline.style.transition = 'all 1.2s ease 2s';
+            profilePicContainer.style.transition = 'all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 2.5s';
+            
+            // Animate "Sana" - Slide from left with rotation
+            setTimeout(() => {
+                nameParts[0].style.opacity = '1';
+                nameParts[0].style.transform = 'translateX(0) rotate(0deg)';
+                nameParts[0].classList.add('glow');
+            }, 500);
+            
+            // Animate "Ur" - Spin and appear
+            setTimeout(() => {
+                nameParts[1].style.opacity = '1';
+                nameParts[1].style.transform = 'scale(1) rotate(0deg)';
+            }, 1200);
+            
+            // Animate "Rahman" - Slide from right with rotation
+            setTimeout(() => {
+                nameParts[2].style.opacity = '1';
+                nameParts[2].style.transform = 'translateX(0) rotate(0deg)';
+                nameParts[2].classList.add('float-animation');
+            }, 1900);
+            
+            // Animate tagline
+            setTimeout(() => {
+                tagline.style.opacity = '1';
+                tagline.style.transform = 'translateY(0)';
+            }, 2600);
+            
+            // Animate profile picture with spin and scale
+            setTimeout(() => {
+                profilePicContainer.style.opacity = '1';
+                profilePicContainer.style.transform = 'scale(1) rotate(0deg)';
+                profilePicContainer.classList.add('float-animation');
+            }, 3300);
+        }
+        
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            animateNameSpecial();
+            
+            // Add scroll event listener after intro animation
+            setTimeout(() => {
+                window.addEventListener('scroll', handleScroll);
+            }, 4000);
+        });
+        
+        // Navbar scroll effect
+        function handleScroll() {
+            // Navbar background on scroll
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Back to top button visibility
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+            
+            // Add fade-in animation to sections on scroll
+            const sections = document.querySelectorAll('section:not(#intro)');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.85) {
+                    section.classList.add('fade-in');
+                }
+            });
+        }
+        
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Back to top functionality
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission with animation
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Add loading animation to button
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (in real app, send to server)
+            setTimeout(() => {
+                // Success message with animation
+                alert(`Thank you, Sana! Your form has been submitted successfully. We will contact you at{sana@email.com}.`);
+                
+                // Reset form and button
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Add celebration effect
+                submitBtn.style.background = 'linear-gradient(90deg, #00b09b, #96c93d)';
+                setTimeout(() => {
+                    submitBtn.style.background = 'linear-gradient(90deg, #ffdd00, #ff8c00)';
+                }, 2000);
+            }, 1500);
+        });
+        
+        // Add hover effects to skill cards
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.skill-icon i');
+                icon.style.transform = 'scale(1.2) rotate(10deg)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.skill-icon i');
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+        
+        // Add typing effect to tagline (optional)
+        function typeWriter(text, element, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+        
+        // Uncomment below to enable typing effect on tagline
+        // setTimeout(() => {
+        //     const taglineText = "Digital Creator • Web Designer • Social Media Influencer";
+        //     typeWriter(taglineText, tagline, 80);
+        // }, 3000);
+        
+        // Add floating particles effect to intro (optional enhancement)
+        function createParticles() {
+            const intro = document.getElementById('intro');
+            const particles = 30;
+            
+            for (let i = 0; i < particles; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = `rgba(255, ${Math.random() * 255}, ${Math.random() * 255}, 0.7)`;
+                particle.style.borderRadius = '50%';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.zIndex = '1';
+                intro.appendChild(particle);
+                
+                // Animate particle
+                animateParticle(particle);
+            }
+        }
+        
+        function animateParticle(particle) {
+            let x = parseFloat(particle.style.left);
+            let y = parseFloat(particle.style.top);
+            let xSpeed = (Math.random() - 0.5) * 0.5;
+            let ySpeed = (Math.random() - 0.5) * 0.5;
+            
+            function move() {
+                x += xSpeed;
+                y += ySpeed;
+                
+                // Bounce off edges
+                if (x <= 0 || x >= 100) xSpeed = -xSpeed;
+                if (y <= 0 || y >= 100) ySpeed = -ySpeed;
+                
+                particle.style.left = x + 'vw';
+                particle.style.top = y + 'vh';
+                
+                requestAnimationFrame(move);
+            }
+            
+            move();
+        }
+        
+        // Uncomment below to enable particle effect
+        // setTimeout(createParticles, 4000);
+    </script>
+</body>
+</html>
